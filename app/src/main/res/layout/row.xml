@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <variable
+      name="state"
+      type="com.example.netia_weather.models.RowState" />
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="8dp"
+    android:paddingTop="8dp">
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="72dp"
+        android:layout_height="33dp"
+        android:text="@{state.name}"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="@id/icon"
+        app:layout_constraintEnd_toStartOf="@id/temp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/icon"
+        tools:text="Tonight" />
+
+    <ImageView
+      android:id="@+id/icon"
+      android:layout_width="0dp"
+      android:layout_height="64dp"
+      android:contentDescription="@string/icon"
+      app:imageUrl="@{state.icon}"
+      app:layout_constraintDimensionRatio="1:1"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+      android:id="@+id/temp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="16dp"
+      android:layout_marginStart="16dp"
+      android:text="@{state.temp}"
+      android:textAppearance="@style/TextAppearance.AppCompat.Large"
+      app:layout_constraintBottom_toBottomOf="@id/icon"
+      app:layout_constraintEnd_toStartOf="@+id/icon"
+      app:layout_constraintTop_toTopOf="@id/icon"
+      tools:text="55°C" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
