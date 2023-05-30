@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">netia_weather.k</string>
+    <string name="icon">Icon</string>
+    <string name="temp">%d%s</string>
 </resources>
